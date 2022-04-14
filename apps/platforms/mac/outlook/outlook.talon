@@ -1,6 +1,6 @@
 app.bundle: com.microsoft.Outlook
 -
-# source: https://github.com/nriley/knausj_talon/tree/8b7898a98a8b701e4977f6dab482e46ca7c2cb3a/apps/platforms/mac/outlook
+# source: https://github.com/nriley/knausj_talon/tree/nriley/apps/platforms/mac/outlook
 # dictation mode gets confused when typing too fast
 settings():
 	key_wait = 2
