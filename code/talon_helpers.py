@@ -183,8 +183,7 @@ class Actions:
             Popen(['/bin/sh', '-c',
                 f'/usr/bin/open -W {talon_app_path} ; /usr/bin/open {talon_app_path}'
             ], start_new_session=True)
-            #talon_app.appscript().quit(waitreply=False) # XXX temporary replacement
-            # talon_app.quit()
+            talon_app.quit()
         elif app.platform == "windows":
             os.startfile(talon_app.exe)
             talon_app.quit()
