@@ -249,6 +249,9 @@ class Actions:
         rect = ui.active_window().rect
         ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
 
+    def mouse_left_click():
+        """left click"""
+        ctrl.mouse_click(button=0, hold=16000)
 
 def show_cursor_helper(show):
     """Show/hide the cursor"""
