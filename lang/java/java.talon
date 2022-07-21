@@ -43,3 +43,7 @@ op array:
 
 op new:
     insert("new ")
+
+push:
+    edit.right()
+    insert(";")
