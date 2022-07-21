@@ -6,7 +6,7 @@ settings():
 	key_wait = 2
 
 archive: user.outlook_archive()
-delete: key(cmd-backspace)
+trash: key(cmd-backspace)
 ^delete all$: user.menu_select('Edit|Delete All')
 flag: key(ctrl-0)
 unflag: key(cmd-ctrl-0)
