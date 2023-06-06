@@ -1,5 +1,5 @@
 os: mac
-app: iterm2
+app: warp
 -
 tag(): terminal
 # todo: filemanager support

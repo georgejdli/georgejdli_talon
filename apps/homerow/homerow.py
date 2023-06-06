@@ -23,7 +23,7 @@ class UserActions:
             pass
 
         # actions.key("ctrl-alt-shift-h")
-        actions.key("shift-super-space")
+        actions.key("shift-super-/")
         for attempt in range(10):
             actions.sleep("50ms")
             try:

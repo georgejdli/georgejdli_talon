@@ -42,6 +42,8 @@ panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel switch: user.vscode("workbench.action.togglePanel")
 panel terminal: user.vscode("workbench.action.terminal.focus")
+panel (toggle | tog): user.vscode("workbench.action.togglePanel")
+panel (bug | debug): user.vscode("workbench.panel.repl.view.focus")
 focus editor: user.vscode("workbench.action.focusActiveEditorGroup")
 
 # Settings
@@ -236,6 +238,14 @@ terminal toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal"
 terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
 terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
 terminal <number_small>: user.vscode_terminal(number_small)
+
+## Terminal integrations
+tag(): terminal
+tag(): user.generic_unix_shell
+#tag(): user.git
+tag(): user.kubectl
+tag(): user.kubectx
+tag(): user.readline
 
 #TODO: should this be added to linecommands?
 copy line down: user.vscode("editor.action.copyLinesDownAction")
