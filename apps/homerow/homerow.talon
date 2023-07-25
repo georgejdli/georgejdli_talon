@@ -1,4 +1,4 @@
-# https://github.com/nriley/knausj_talon/blob/51cf9317830d19482d49068b954ad43638993bef/apps/homerow.talon
+# https://github.com/nriley/talon_community/tree/nriley/apps/homerow
 
 os: mac
 -
