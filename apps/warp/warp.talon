@@ -10,3 +10,6 @@ tag(): user.kubectl
 tag(): user.kubectx
 tag(): user.tabs
 tag(): user.readline
+tag(): user.k9s_terminal
+tag(): user.k9s
+tag(): user.docker
