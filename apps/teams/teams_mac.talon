@@ -1,5 +1,6 @@
 os: mac
 app: com.microsoft.teams
+app: com.microsoft.teams2
 -
 
 open history: key(super-shift-h)
@@ -22,12 +23,12 @@ reset:
 zoom reset: key(super-0)
 
 # navigations
-open (act | activity): key(super-1)
-open chat: key(super-2)
-open teams: key(super-3)
-open calendar: key(super-4)
-open calls: key(super-5)
-open files: key(super-6)
+open (act | activity): key(super-2)
+open chat: key(super-3)
+open teams: key(super-4)
+open calendar: key(super-5)
+open calls: key(super-6)
+open files: key(super-7)
 [go] [to] (prev | previous) [list] item: key(alt-up)
 [go] [to] next [list] item: key(alt-down)
 move [selected] team up: key(super-shift-up)
