@@ -46,7 +46,12 @@ ctx.lists["self.k8s_object"] = (
     "crb",
     "clusterrolebinding",
     "secrets",
-    "ingress"
+    "ingress",
+    "crd",
+    "customresourcedefinition",
+    "helm",
+    "events",
+    "workloads"
 )
 
 # --- Define actions ---

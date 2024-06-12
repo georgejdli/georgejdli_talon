@@ -13,3 +13,4 @@ tag(): user.readline
 tag(): user.k9s_terminal
 tag(): user.k9s
 tag(): user.docker
+tag(): user.crictl

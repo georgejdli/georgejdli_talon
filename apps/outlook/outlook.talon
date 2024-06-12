@@ -45,11 +45,11 @@ window (new|open): user.menu_select('File|New|Main Window')
 
 # not tested in "old Outlook"
 # can use Control-[/] for previous/next though that does not focus the message list
-next:
+[item] next:
 	user.outlook_focus_message_list()
 	key(down)
   #key(ctrl-])
-previous:
+[item] (previous|last):
 	user.outlook_focus_message_list()
 	key(up)
   #key(ctrl-[)
