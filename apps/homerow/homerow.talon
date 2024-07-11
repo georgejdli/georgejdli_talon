@@ -1,9 +1,9 @@
-# https://github.com/nriley/talon_community/tree/nriley/apps/homerow
-
 os: mac
+mode: command
 -
-# Vimac/Homerow "classic" (labels)
-^nav$: key(ctrl-alt-v)
-
 # Homerow (with search + labels enabled)
 ^ax [<user.text>]: user.homerow_search("{text or ''}")
+
+# Work around a rare word being inserted instead of "ax…" in mixed mode
+# "Axtell" instead of "ax tell"
+^Axtell: user.homerow_search("tell")

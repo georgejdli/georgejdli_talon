@@ -1,7 +1,7 @@
 tag: user.homerow_search
 -
-choose: user.homerow_pick("")
-choose <user.letters>: user.homerow_pick(letters)
+(pick | pic): user.homerow_pick("", false)
+(pick | pic) <user.letters>: user.homerow_pick(letters, false)
 
-(pick | pic): user.homerow_pick("")
-(pick | pic) <user.letters>: user.homerow_pick(letters)
+(pick | pic) (and | end): user.homerow_pick("", true)
+(pick | pic) <user.letters> (and | end): user.homerow_pick(letters, true)
