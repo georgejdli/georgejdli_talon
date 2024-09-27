@@ -1,28 +1,11 @@
-from talon import Context, Module, actions, app
+from talon import Context, Module, app
 
 from ..user_settings import get_list_from_csv
-
-
-def setup_default_alphabet():
-    """set up common default alphabet.
-
-    no need to modify this here, change your alphabet using alphabet.csv"""
-    initial_default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split()
-    initial_letters_string = "abcdefghijklmnopqrstuvwxyz"
-    initial_default_alphabet_dict = dict(
-        zip(initial_default_alphabet, initial_letters_string)
-    )
-
-    return initial_default_alphabet_dict
-
-
-alphabet_list = get_list_from_csv(
-    "alphabet.csv", ("Letter", "Spoken Form"), setup_default_alphabet()
-)
 
 # used for number keys & function keys respectively
 digits = "zero one two three four five six seven eight nine".split()
 f_digits = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split()
+
 
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
@@ -132,7 +115,6 @@ if app.platform == "mac":
     modifier_keys["command"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
-ctx.lists["self.letter"] = alphabet_list
 
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
@@ -177,9 +159,15 @@ symbol_key_words = {
     "apostrophe": "'",
     "L square": "[",
     "left square": "[",
+    "brack": "[",
+    "bracket": "[",
+    "left bracket": "[",
     "square": "[",
     "R square": "]",
     "right square": "]",
+    "r brack": "]",
+    "r bracket": "]",
+    "right bracket": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -194,14 +182,12 @@ symbol_key_words = {
     "paren": "(",
     "brace": "{",
     "left brace": "{",
-    "brack": "{",
-    "bracket": "{",
-    "left bracket": "{",
+    "curly bracket": "{",
+    "left curly bracket": "{",
     "r brace": "}",
     "right brace": "}",
-    "r brack": "}",
-    "r bracket": "}",
-    "right bracket": "}",
+    "r curly bracket": "}",
+    "right curly bracket": "}",
     "angle": "<",
     "left angle": "<",
     "less than": "<",
@@ -265,14 +251,3 @@ ctx.lists["self.special_key"] = special_keys
 ctx.lists["self.function_key"] = {
     f"F {name}": f"f{i}" for i, name in enumerate(f_digits, start=1)
 }
-
-
-@mod.action_class
-class Actions:
-    def move_cursor(s: str):
-        """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
-        for d in s.split():
-            if d in ("left", "right", "up", "down"):
-                getattr(actions.edit, d)()
-            else:
-                raise RuntimeError(f"invalid arrow key: {d}")
