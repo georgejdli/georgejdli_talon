@@ -7,6 +7,7 @@ from typing import Union
 
 from talon import Module, actions, app, clip, registry, scope, speech_system, ui
 from talon.grammar import Phrase
+from talon.scripting.types import ListTypeFull
 
 pp = pprint.PrettyPrinter()
 
@@ -176,3 +177,7 @@ class Actions:
         elif app.platform == "windows":
             os.startfile(talon_app.exe)
             talon_app.quit()
+
+    def talon_get_active_registry_list(name: str) -> ListTypeFull:
+        """Returns the active list from the Talon registry"""
+        return registry.lists[name][-1]
