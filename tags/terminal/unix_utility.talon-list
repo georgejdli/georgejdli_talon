@@ -61,3 +61,5 @@ word count lines: wc -l
 word count: wc
 who
 who am I: whoami
+cube context: kubectx
+cube name: kubens
